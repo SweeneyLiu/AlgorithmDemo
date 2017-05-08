@@ -25,10 +25,18 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
         //插入排序测试
-        int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+        /*int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
         int[] insertSortArray = Algorithm.insertSort(a);
         for (int i = 0; i < insertSortArray.length; i++) {
             Log.i(TAG, "onCreate: " +insertSortArray[i]);
+        }*/
+
+        //希尔排序测试
+        int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
+        int[] hillSortArray = Algorithm.hillSort(a);
+        for (int i = 0; i < hillSortArray.length; i++) {
+            Log.i(TAG, "onCreate: " +hillSortArray[i]);
         }
+
     }
 }

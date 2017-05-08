@@ -98,8 +98,26 @@ public class Algorithm {
      * @param arr
      * @return
      */
-    public static int[] hillSort(int[] arr){
+    public static int[] hillSort(int[] arr) {
+        int i, j, gap;
 
+        for (gap = arr.length / 2; gap > 0; gap /= 2){//步长
+            for (i = 0; i < gap; i++)        //直接插入排序
+            {
+                for (j = i + gap; j < arr.length; j += gap)
+                    if (arr[j] < arr[j - gap]) {
+                        int temp = arr[j];
+                        int k = j - gap;
+                        while (k >= 0 && arr[k] > temp) {
+                            arr[k + gap] = arr[k];
+                            k -= gap;
+                        }
+                        arr[k + gap] = temp;
+                    }
+            }
+        }
+
+        return arr;
     }
 
 }
