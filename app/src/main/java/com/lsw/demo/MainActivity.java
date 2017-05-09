@@ -32,11 +32,26 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
         //希尔排序测试
-        int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
+        /*int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
         int[] hillSortArray = Algorithm.hillSort(a);
         for (int i = 0; i < hillSortArray.length; i++) {
             Log.i(TAG, "onCreate: " +hillSortArray[i]);
+        }*/
+
+        //直接选择排序
+        /*int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
+        int[] selectSortArray = Algorithm.Selectsort(a);
+        for (int i = 0; i < selectSortArray.length; i++) {
+            Log.i(TAG, "onCreate: " +selectSortArray[i]);
+        }*/
+
+        //快速排序
+        int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
+        int[] quickSortArray = Algorithm.quickSort(a,0,a.length-1);
+        for (int i = 0; i < quickSortArray.length; i++) {
+            Log.i(TAG, "onCreate: " +quickSortArray[i]);
         }
+
 
     }
 }
