@@ -37,28 +37,6 @@ public class Algorithm {
      * @param array
      * @return
      */
-    /*public static int[] bubbleSort(int[] array){
-        int temp;
-        int count;
-        for(int i=0;i<array.length;i++){
-            for(int j=i+1;j<array.length;j++){
-                if(array[i]>array[j]){
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                    count++;
-                }
-            }
-        }
-        Log.i("lsw---", "bubbleSort: "+count);
-        return array;
-    }*/
-
-    /**
-     * 冒泡排序算法
-     * @param array
-     * @return
-     */
     public static int[] bubbleSort(int[] array) {
         int temp;
         int n = array.length;
@@ -73,6 +51,76 @@ public class Algorithm {
         }
         return array;
     }
+
+
+    /**
+     * 冒泡排序优化2
+     * @param array
+     * @return
+     */
+    public static int[] bubbleSort2(int[] array) {
+        int temp;
+        int n = array.length;
+        boolean flag = false;
+        for (int i = 0; i < n&&!flag; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                flag = true;
+                if (array[j] > array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    flag = false;
+                }
+            }
+        }
+        return array;
+    }
+
+    /**
+     * 冒泡排序优化3
+     * 如果有100个数的数组，仅前面10个无序，后面90个都已排好序且都大于前面10个数字，
+     * 那么在第一趟遍历后，最后发生交换的位置必定小于10，且这个位置之后的数据必定已经有序了，
+     * 记录下这位置，第二次只要从数组头部遍历到这个位置就可以了。
+     * 例：{4,5,7,1,8,9,10,11,12,13}
+     * @param arr
+     * @return
+     */
+    public static int[] bubbleSort3(int arr[])
+    {
+        int flag = arr.length;
+        int temp;
+        int n = arr.length;
+
+
+        for (int i = 0; i < n && flag > 0; i++) {
+            n = flag;
+            flag = 0;
+            for (int j = 0; j < n - 1; ++j) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    flag = j + 1;
+                }
+            }
+        }
+
+       /* while (flag > 0)
+        {
+            n = flag;
+            flag = 0;
+            for (int j = 0; j < n-1; j++)
+                if (arr[j] > arr[j+1])
+                {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    flag = j+1;
+                }
+        }*/
+        return arr;
+    }
+
 
     /**
      * 插入排序算法

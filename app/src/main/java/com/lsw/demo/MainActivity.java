@@ -24,6 +24,20 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "onCreate: " +bubbleSortArray[i]);
         }*/
 
+        //冒泡排序2
+        /*int[] bubbleArray = {4,5,7,1,21,3};
+        int[] bubbleSortArray = Algorithm.bubbleSort2(bubbleArray);
+        for (int i = 0; i < bubbleSortArray.length; i++) {
+            Log.i(TAG, "onCreate: " +bubbleSortArray[i]);
+        }*/
+
+        //冒泡排序3
+        int[] bubbleArray = {4,5,7,1,8,9,10,11,12,13};
+        int[] bubbleSortArray = Algorithm.bubbleSort3(bubbleArray);
+        for (int i = 0; i < bubbleSortArray.length; i++) {
+            Log.i(TAG, "onCreate: " +bubbleSortArray[i]);
+        }
+
         //插入排序测试
         /*int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
         int[] insertSortArray = Algorithm.insertSort(a);
@@ -46,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
         //快速排序
-        int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
+        /*int[] a={49, 38, 65, 97, 26, 13, 27, 49, 55, 4};
         int[] quickSortArray = Algorithm.quickSort(a,0,a.length-1);
         for (int i = 0; i < quickSortArray.length; i++) {
             Log.i(TAG, "onCreate: " +quickSortArray[i]);
-        }
+        }*/
 
 
     }
