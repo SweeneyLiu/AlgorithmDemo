@@ -1,6 +1,5 @@
 package com.lsw.demo;
 
-import android.util.Log;
 
 /**
  * Created by liushuwei on 2017/4/25.
@@ -10,6 +9,7 @@ public class Algorithm {
 
 
     /**
+     * 时间复杂度：O(logn)
      * 数据需是有序不重复的
      * 二分法查找
      * @param array
@@ -33,6 +33,7 @@ public class Algorithm {
     }
 
     /**
+     * 时间复杂度：O（n^2）
      * 冒泡排序算法
      * @param array
      * @return
