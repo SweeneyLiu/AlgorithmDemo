@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "onCreate: " +quickSortArray[i]);
         }*/
 
-
+        CycleDecimal.isCycleDecimal(1,3);
+        CycleDecimal.isCycleDecimal(1234,9999);
+        CycleDecimal.isCycleDecimal(1233,9990);
+        CycleDecimal.isCycleDecimal(130,20);
     }
 }
