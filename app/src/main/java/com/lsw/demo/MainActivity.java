@@ -70,5 +70,12 @@ public class MainActivity extends AppCompatActivity {
         CycleDecimal.isCycleDecimal(1234,9999);
         CycleDecimal.isCycleDecimal(1233,9990);
         CycleDecimal.isCycleDecimal(130,20);
+
+        //剑指offer调用
+//        int[][] arr = new int[][]{{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
+//        Log.i("lsw--剑指offer1--",PointToOffer.getPointToOffer().find(7,arr)+"");
+//        Log.i("lsw--剑指offer2--",PointToOffer.getPointToOffer().replaceSpace(new StringBuffer("We Are Happy"));
+//        Log.i("lsw--剑指offer3--",PointToOffer.getPointToOffer().printListFromTailToHead();
+
     }
 }
