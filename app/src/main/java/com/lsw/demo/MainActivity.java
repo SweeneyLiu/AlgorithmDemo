@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
@@ -16,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         //二分法查找测试
 //        int[] a = {1,3,5,8,11,19};
 //        Log.i(TAG, "onCreate: " + Algorithm.binarySearch(a, 19));
-
         //冒泡排序测试
         /*int[] bubbleArray = {4,5,7,1,21,3};
         int[] bubbleSortArray = Algorithm.bubbleSort(bubbleArray);
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         int[] bubbleArray = {4,5,7,1,8,9,10,11,12,13};
         int[] bubbleSortArray = Algorithm.bubbleSort3(bubbleArray);
         for (int i = 0; i < bubbleSortArray.length; i++) {
-            Log.i(TAG, "onCreate: " +bubbleSortArray[i]);
+//            Log.i(TAG, "onCreate: " +bubbleSortArray[i]);
         }
 
         //插入排序测试
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 //        Log.i("lsw--剑指offer1--",PointToOffer.getPointToOffer().find(7,arr)+"");
 //        Log.i("lsw--剑指offer2--",PointToOffer.getPointToOffer().replaceSpace(new StringBuffer("We Are Happy"));
 //        Log.i("lsw--剑指offer3--",PointToOffer.getPointToOffer().printListFromTailToHead();
+        PointToOffer.getPointToOffer().printToMaxOfNDigits1(2);
 
     }
 }

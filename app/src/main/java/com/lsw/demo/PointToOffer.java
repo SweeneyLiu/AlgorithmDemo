@@ -1,5 +1,7 @@
 package com.lsw.demo;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -233,6 +235,117 @@ public class PointToOffer {
         }
 
         return n < 0 ? 1 / result : result;
+    }
+
+
+    /**
+     * 打印1到最大的n位数
+     * 题目：输入数字n，按顺序打印出从1到最大的n位进制数。比如输入3则打印出 1、2、3 一直到999.
+     * @param n
+     */
+
+    //方法一
+    public void printToMaxOfNDigits1(int n) {
+        int num = 1;
+        for (int j = 0; j < n; j++) {
+            num *= 10;
+        }
+        for (int k = 1; k < num; k++) {
+            Log.i("lsw---", k + "");
+        }
+
+    }
+
+    //方法二
+    public void printToMaxOfNDigits2(int n) {
+        int[] array = new int[n];
+        if (n <= 0)
+            return;
+        printArray(array, 0);
+    }
+
+    private void printArray(int[] array, int n) {
+        for (int i = 0; i < 10; i++) {
+            if (n != array.length) {
+                array[n] = i;
+                printArray(array, n + 1);
+            } else {
+                boolean isFirstNo0 = false;
+                for (int j = 0; j < array.length; j++) {
+                    if (array[j] != 0) {
+                        System.out.print(array[j]);
+                        if (!isFirstNo0)
+                            isFirstNo0 = true;
+                    } else {
+                        if (isFirstNo0)
+                            System.out.print(array[j]);
+                    }
+                }
+                System.out.println();
+                return;
+            }
+        }
+    }
+
+    /**
+     * 在 O（1）时间删除链表结点
+     * 题目：给定单向链表的头指针和一个结点指针，定义一个函数在 O(1)时间删除
+     * 该结点。
+     * @param head
+     * @param pToBeDeleted
+     */
+    public void deleteNode(SingleListNode head, SingleListNode pToBeDeleted){
+        if(head == null || pToBeDeleted == null){
+            return;
+        }
+        SingleListNode q = pToBeDeleted.next;
+        //要删除的不是尾结点
+        if(q != null){
+            pToBeDeleted.value = q.value;
+            pToBeDeleted.next = q.next;
+            q = null;
+        } else if(head == pToBeDeleted){//链表只有一个结点，删除头结点（也是尾节点）
+            pToBeDeleted = null;
+            head = null;
+        }else{//链表中有多个结点，删除尾结点
+            SingleListNode q1 = head;
+            while(q1.next!=pToBeDeleted){
+                q1 = q1.next;
+            }
+            q1.next = null;
+            pToBeDeleted = null;
+        }
+    }
+
+    class SingleListNode{
+        int value;
+        SingleListNode next;
+        public SingleListNode(int v){value = v;}
+    }
+
+
+    public void order(int[] array) {
+        if (array == null || array.length == 0)
+            return;
+        int start = 0;
+        int end = array.length - 1;
+        while (start < end) {
+            while (start < end && !isEven(array[start])) {
+                start++;
+            }
+            while (start < end && isEven(array[end])) {
+                end--;
+            }
+            if (start < end) {
+                int temp = array[start];
+                array[start] = array[end];
+                array[end] = temp;
+            }
+        }
+    }
+
+    private boolean isEven(int n) {
+        return n%2 == 0;
     }
 
 }

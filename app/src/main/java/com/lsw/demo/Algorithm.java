@@ -123,6 +123,54 @@ public class Algorithm {
     }
 
 
+/*    *//**
+     * 冒泡排序优化算法1
+     * @param array
+     * @return
+     *//*
+    public static int[] bubbleSort1(int[] array) {
+        int temp;
+        int n = array.length;
+        boolean = true;
+        while(flag){
+            flag = false;
+            for (int j = 0; j < n-1; j++)
+                if (a[j] > a[j+1]){
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    flag = true;
+                }
+            n--;
+        }
+        return array;
+    }
+
+    *//**
+     * 冒泡排序优化算法2
+     * @param array
+     * @return
+     *//*
+    public static int[] bubbleSort2(int[] array) {
+        int temp;
+        int n = array.length;
+        int flag = n;
+        int k;
+        while(flag>0){
+            k = flag;
+            flag = 0;
+            for (int j = 0; j < k-1; j++)
+                if (a[j] > a[j+1])
+                {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    flag = j+1;
+                }
+        }
+        return array;
+    }*/
+
     /**
      * 插入排序算法
      * @param arr
